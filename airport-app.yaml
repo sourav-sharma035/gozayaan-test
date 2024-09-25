@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: airport-api
+  labels:
+    app: airport-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: airport-api
+  template:
+    metadata:
+      labels:
+        app: airport-api
+    spec:
+      containers:
+        - name: airport-api
+          image: airport-api:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: AWS_REGION
+              value: "us-east-1"
