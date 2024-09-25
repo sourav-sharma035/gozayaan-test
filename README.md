@@ -57,3 +57,19 @@ Step-1: Create deployemt and service from airport-app.yaml  and airport-service.
 $kubectl apply -f airport-app.yaml
 
 $kubectl apply -f airport-service.yaml
+
+Task-5: Use API gateway Create routing rules to send 20% of traffic to the /airports_v2 endpoint
+
+I'll configure traffic splitting in API Gateway using AWS Lambda for traffic routing of 20% traffic to /airports_v2 and rest of traffic to /airports
+
+Step-1:
+
+Build the route_lambda.go file
+
+$go build route_lambda.go
+
+$zip route_lambda.zip route_lambda
+
+Step-2:
+
+Than upload the route_lambda.zip file in my already created lambda function and deploy it 
