@@ -58,10 +58,15 @@ $kubectl apply -f airport-service.yaml
 
 # Task-5: Use API gateway Create routing rules to send 20% of traffic to the /airports_v2 endpoint
 
-I'll configure traffic splitting in API Gateway using AWS Lambda for traffic routing of 20% traffic to /airports_v2 and rest of traffic to /airports
+I'll configure traffic splitting in API Gateway(airport_api) using AWS Lambda.Route 20% traffic to /airports_v2 and rest of traffic to /airports endpoints 
 
 Step-1:
+First Create two lambda function for /airports and /airports_v2
 
+Step-2:
+Create another lambda function(route_lambda) for splitting traffic when traffic will come API Gateway(airport_api) 
+
+Step-3
 Build the route_lambda.go file
 
 $go build route_lambda.go
