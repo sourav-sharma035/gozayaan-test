@@ -47,3 +47,13 @@ $docker build -t airport-api .
 Step-3: Run the container from build image 
 
 $docker run -p 8080:8080 airport-api
+
+Task-4: Prepare a deployment and service resource to deploy in Kubernetes.
+
+Now I will create a Deployment and Service yaml file for deploying airport app also expose the application pods by Service
+
+Step-1: Create deployemt and service from airport-app.yaml  and airport-service.yaml yaml file 
+
+$kubectl apply -f airport-app.yaml
+
+$kubectl apply -f airport-service.yaml
